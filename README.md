@@ -15,9 +15,9 @@ This project provides a Python script to retrieve all Markdown (.md) files from 
 
 ## Running 
 
-create a loadvars.sh from loadvars.sh.dist
-source loadvars.sh
-python3 get_files_from_github.py rafaporci sample_classifieds_api fetch-clean-zip working-dir/
-python3 documentation_analyzer.py
+- create a loadvars.sh from loadvars.sh.dist
+- source loadvars.sh
+- python3 get_files_from_github.py rafaporci sample_classifieds_api fetch-clean-zip working-dir/
+- python3 documentation_analyzer.py
 
 

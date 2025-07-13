@@ -1,2 +1,4 @@
 working-dir/
 venv/ 
+loadvars.sh
+.DS_Store

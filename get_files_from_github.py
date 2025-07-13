@@ -111,38 +111,12 @@ def fetch_clean_zip(owner, repo, working_dir):
 if __name__ == "__main__":
     if len(sys.argv) < 4:
         print("Usage: python get_md_files_from_github.py <owner> <repo> <action> [output_zip_path]")
-        print("<action>: 'list-md' to list Markdown files, 'download-zip' to download the repository as a zip file.")
-        print("         'extract-py' to extract .py files from a zip.")
-        print("         'clean-zip' to create a zip with only .py files.")
-        print("         'create-final-zip' to zip a folder into a final zip file.")
-        print("         'fetch-clean-zip' to download a repo, extract only .py files, and create a cleaned zip file.")
+        print("<action>: 'fetch-clean-zip' to download a repo, extract only .py files, and create a cleaned zip file.")
         sys.exit(1)
     owner = sys.argv[1]
     repo = sys.argv[2]
     action = sys.argv[3]
-    if action == 'list-md':
-        md_files = get_md_files(owner, repo)
-        print("Markdown files found:")
-        for path in md_files:
-            print(path)
-    elif action == 'download-zip':
-        output_path = sys.argv[4] if len(sys.argv) > 4 else None
-        download_repo_zip(owner, repo, output_path)
-    elif action == 'extract-py':
-        if len(sys.argv) < 5:
-            print("Usage: python get_md_files_from_github.py <owner> <repo> extract-py <zip_path> <target_dir>")
-            sys.exit(1)
-        zip_path = sys.argv[4]
-        target_dir = sys.argv[5] if len(sys.argv) > 5 else 'extracted_py_files'
-        extract_py_files_from_zip(zip_path, target_dir)
-    elif action == 'create-final-zip':
-        if len(sys.argv) < 6:
-            print("Usage: python get_md_files_from_github.py <owner> <repo> create-final-zip <folder_to_zip> <output>")
-            sys.exit(1)
-        folder_to_zip = sys.argv[4]
-        output = sys.argv[5]
-        create_final_zip(folder_to_zip, output)
-    elif action == 'fetch-clean-zip':
+    if action == 'fetch-clean-zip':
         if len(sys.argv) < 5:
             print("Usage: python get_md_files_from_github.py <owner> <repo> fetch-clean-zip <working_dir>")
             sys.exit(1)
@@ -151,3 +125,5 @@ if __name__ == "__main__":
     else:
         print("Unknown action. Use 'list-md' or 'download-zip' or 'extract-py' or 'clean-zip' or 'create-final-zip' or 'fetch-clean-zip'.")
         sys.exit(1) 
+
+    # python3 get_files_from_github.py rafaporci sample_classifieds_api fetch-clean-zip working-dir/

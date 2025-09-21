@@ -1,6 +1,6 @@
-# Document Refresher
+# Documentation Refresher
 
-This project provides a Python script to retrieve all Markdown (.md) files from a given public GitHub repository, or to download the repository as a zip file.
+This project implements RAG search over a code base to recommend documentation updates using OpenAI API.
 
 ## Requirements
 
